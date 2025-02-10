@@ -1,5 +1,3 @@
-# evaluate.py
-
 import tensorflow as tf
 from data_loader import load_datasets
 

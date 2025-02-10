@@ -2,6 +2,7 @@ __pycache__/
 best_model.keras
 output_dataset/
 dataset/
+model.tflite
 *.h5
 *.keras
 *.ckpt
