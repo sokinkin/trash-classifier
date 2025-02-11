@@ -4,7 +4,7 @@ from model import build_model
 from utils import plot_history
 
 def main():
-    data_dir = "output_dataset"  # base directory of your split data
+    data_dir = "output_dataset"  # Base directory of your split data
     img_height, img_width = 150, 150
     batch_size = 32
     num_classes = 6
@@ -19,7 +19,8 @@ def main():
 
     callbacks = [
         tf.keras.callbacks.EarlyStopping(monitor='val_loss', patience=5, restore_best_weights=True),
-        tf.keras.callbacks.ModelCheckpoint("best_model.keras", monitor='val_loss', save_best_only=True)
+        tf.keras.callbacks.ModelCheckpoint("best_model.keras", monitor='val_loss', save_best_only=True),
+        tf.keras.callbacks.ReduceLROnPlateau(monitor='val_loss', factor=0.5, patience=2, verbose=1)
     ]
     
     # Train the model
